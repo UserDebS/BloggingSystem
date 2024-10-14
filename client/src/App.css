@@ -1,0 +1,7 @@
+.ql-formats button:hover{
+  transform: scale(1.2);
+  & g > path{
+    opacity: 0.7;
+    fill: grey;
+  }
+}
