@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "client" : "cd client && npm run dev",
-        "server" : "py ./server/main.py"
+        "client": "cd client && npm run dev",
+        "server": "py ./server/main.py"
     }
 }

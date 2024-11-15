@@ -12,6 +12,21 @@ export default defineConfig({
         target : 'http://127.0.0.1:5500/',
         changeOrigin : true,
         secure : false
+      },
+      '/login' : {
+        target : 'http://127.0.0.1:5500/',
+        changeOrigin : true,
+        secure : false
+      },
+      '/signup' : {
+        target : 'http://127.0.0.1:5500/',
+        changeOrigin : true,
+        secure : false
+      }, 
+      '/blogs' : {
+        target : 'http://127.0.0.1:5500/',
+        changeOrigin : true,
+        secure : false
       }
     }
   },

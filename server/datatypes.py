@@ -3,6 +3,7 @@ from pydantic import BaseModel
 class UserData(BaseModel):
     username : str
     password : str
+    description : str = 'N/A'
 
 class Content(BaseModel):
     title : str
@@ -25,4 +26,6 @@ class ContentScreenData(BaseModel):
 
 class Profile(BaseModel): # the profile page itself.
     username : str
+    description : str
+    joined_at : str
     blogs : list[ContentTitle]

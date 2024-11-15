@@ -13,6 +13,7 @@ class ImageExtraction:
 
     def extractImage(self, data : dict[str, any]) -> dict[str, any]:
         self.currentGeneratedImageName = strGen(20);
+        self.iterator = 0
         data : dict[str, any] = self.__extractImage(data)
         self.__generateImage()
         return data
@@ -41,9 +42,10 @@ class ImageExtraction:
             if(isinstance(data.get(key), dict)):
                 data.update({key : self.__extractImage(data.get(key))})
             elif(key == 'image'):
-                imageData = self.__getImageType(self.__imageNameGen(), data.get('image'))
-                self.currentImageList.update(imageData)
-                data.update({'image' : list(imageData.keys())[0]})
+                if(str(data.get('image')).startswith('data:image/')):
+                    imageData = self.__getImageType(self.__imageNameGen(), data.get('image'))
+                    self.currentImageList.update(imageData)
+                    data.update({'image' : list(imageData.keys())[0]})
             elif(isinstance(data.get(key), list)):
                 data.update({key : self.__handleList(data.get(key))})
         return data
